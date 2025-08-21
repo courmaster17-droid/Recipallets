@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECIPALLETS - Pallets Ecológicos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-green-700 text-white fixed w-full z-10 shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center space-x-2">
+        <!-- Logo temporal -->
+        <div class="bg-white text-green-700 font-bold rounded-full w-10 h-10 flex items-center justify-center">🌱</div>
+        <span class="font-bold text-xl">RECIPALLETS</span>
+      </div>
+      <nav class="space-x-4 hidden md:flex">
+        <a href="#inicio" class="hover:underline">Inicio</a>
+        <a href="#productos" class="hover:underline">Productos</a>
+        <a href="#cotizador" class="hover:underline">Cotizar</a>
+        <a href="#contacto" class="hover:underline">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="pt-24 bg-green-100 text-center py-16">
+    <h1 class="text-4xl font-bold text-green-700">Reciclaje y Sustentabilidad en cada Pallet</h1>
+    <p class="mt-4 text-lg text-gray-700">Si no nos compras carlitos K. ira por tu hija</p>
+  </section>
+
+  <!-- Productos -->
+  <section id="productos" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Nuestros Pallets</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Pallet 1 -->
+      <div class="bg-white rounded-xl shadow p-6 text-center">
+	  <img src="pallet-Yugo.png" alt="Pallet con Yugo" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Pallet con Yugo</h3>
+        <p class="text-gray-600">Medida: 1000x1000</p>
+        <p class="text-green-700 font-bold text-lg mt-2">$7.000</p>
+        <button onclick="selectPallet('Pallet con Yugo', 7000)" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Cotizar</button>
+      </div>
+      <!-- Pallet 2 -->
+      <div class="bg-white rounded-xl shadow p-6 text-center">
+	  <img src="pallets-Taco.png" alt="Pallet con Yugo" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Pallet con Taco</h3>
+        <p class="text-gray-600">Medida: 1000x1000</p>
+        <p class="text-green-700 font-bold text-lg mt-2">$6.500</p>
+        <button onclick="selectPallet('Pallet con Taco', 6500)" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Cotizar</button>
+      </div>
+      <!-- Pallet 3 -->
+      <div class="bg-white rounded-xl shadow p-6 text-center">
+	  <img src="pallet-plastico.png" alt="Pallet con Yugo" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Pallet Plástico</h3>
+        <p class="text-gray-600">Medida: 1000x1000</p>
+        <p class="text-green-700 font-bold text-lg mt-2">$8.000</p>
+        <button onclick="selectPallet('Pallet Plástico', 8000)" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Cotizar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventajas -->
+  <section class="bg-green-50 py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">¿Por qué elegirnos?</h2>
+      <p class="text-gray-600">Editar aquí las ventajas</p>
+    </div>
+  </section>
+
+  <!-- Cotizador -->
+  <section id="cotizador" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Cotizador</h2>
+    <div class="max-w-md mx-auto bg-white shadow p-6 rounded-xl">
+      <p id="selectedPallet" class="text-lg font-semibold mb-4">Selecciona un pallet desde la sección de productos</p>
+      <label class="block mb-2 font-medium">Cantidad:</label>
+      <input type="number" id="cantidad" class="w-full border rounded p-2 mb-4" placeholder="Ej: 10" />
+      <button onclick="calcularTotal()" class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Calcular Total</button>
+      <p id="resultado" class="mt-4 text-lg font-bold text-green-700"></p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="bg-green-100 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Contacto</h2>
+      <div class="max-w-lg mx-auto bg-white shadow p-6 rounded-xl">
+        <form>
+          <label class="block mb-2 font-medium">Nombre</label>
+          <input type="text" class="w-full border rounded p-2 mb-4" />
+
+          <label class="block mb-2 font-medium">Correo</label>
+          <input type="email" class="w-full border rounded p-2 mb-4" />
+
+          <label class="block mb-2 font-medium">Mensaje</label>
+          <textarea class="w-full border rounded p-2 mb-4"></textarea>
+
+          <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white text-center py-6">
+    <p>&copy; 2025 RECLIPALLETS. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script Cotizador -->
+  <script>
+    let palletSeleccionado = null;
+    let precioUnitario = 0;
+
+    function selectPallet(nombre, precio) {
+      palletSeleccionado = nombre;
+      precioUnitario = precio;
+      document.getElementById('selectedPallet').innerText = `Seleccionaste: ${nombre} - $${precio}`;
+      document.getElementById('resultado').innerText = '';
+    }
+
+    function calcularTotal() {
+      const cantidad = parseInt(document.getElementById('cantidad').value);
+      if (!palletSeleccionado) {
+        alert('Por favor selecciona un pallet primero.');
+        return;
+      }
+      if (!cantidad || cantidad <= 0) {
+        alert('Por favor ingresa una cantidad válida.');
+        return;
+      }
+      const total = precioUnitario * cantidad;
+      document.getElementById('resultado').innerText = `Total: $${total.toLocaleString()}`;
+    }
+  </script>
+</body>
+</html>
